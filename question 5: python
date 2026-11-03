@@ -1,0 +1,23 @@
+ef check_password(p):
+    upper = False
+    lower = False
+    digit = False
+    special = False
+    
+    if len(p) < 8:
+        return False
+    
+    for c in p:
+        if c.isupper():
+            upper = True
+        if c.islower():
+            lower = True
+        if c.isdigit():
+            digit = True
+        if not c.isalnum():
+            special = True
+    
+    return upper and lower and digit and special
+
+print(check_password(input("Enter password: ")))
+      
